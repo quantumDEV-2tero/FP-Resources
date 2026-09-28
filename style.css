@@ -3563,6 +3563,100 @@ h4 {
 [data-theme="light"] .chat-msg.mine .chat-bubble { color: #ffffff; }
 [data-theme="light"] .gradient-text { filter: none; }
 
+
+/* =====================================================
+   Main page controls: theme + language
+   ===================================================== */
+.hero-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  margin-top: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-controls .nav-prefs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-controls .theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  cursor: pointer;
+  color: var(--text);
+  background: var(--card);
+  border: 1px solid var(--border);
+  transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.hero-controls .theme-toggle:hover {
+  border-color: var(--accent);
+  background: var(--card-hover);
+  transform: translateY(-1px);
+}
+
+.hero-controls .lang-switch {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  overflow: hidden;
+  background: var(--card);
+}
+
+.hero-controls .lang-switch button {
+  min-width: 42px;
+  height: 38px;
+  padding: 0 9px;
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+  color: var(--muted);
+  font: 600 12px "Inter", sans-serif;
+  letter-spacing: .04em;
+}
+
+.hero-controls .lang-switch button[lang="ar"] {
+  font-family: "Cairo", "Inter", sans-serif;
+  font-size: 15px;
+}
+
+.hero-controls .lang-switch button:hover {
+  color: var(--text);
+}
+
+.hero-controls .lang-switch button.active {
+  background: var(--accent);
+  color: #03101b;
+}
+
+[data-theme="light"] .hero-controls .lang-switch button.active {
+  color: #ffffff;
+}
+
+@media (max-width: 650px) {
+  .hero-controls {
+    margin-top: 20px;
+  }
+
+  .hero-controls .theme-toggle {
+    width: 38px;
+    height: 38px;
+  }
+
+  .hero-controls .lang-switch button {
+    min-width: 38px;
+    height: 36px;
+  }
+}
+
 /* =====================================================
    Navbar controls: theme + language
    ===================================================== */
