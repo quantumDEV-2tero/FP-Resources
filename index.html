@@ -20,6 +20,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script>
+    /* Apply saved theme before first paint (no flash) */
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('fp-theme'); } catch (e) {}
+      if (!t) t = (window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet" />
+
 </head>
   <!-- Welcome Notification -->
 <div id="welcome-toast" class="welcome-toast" role="status" aria-live="polite">
@@ -2878,5 +2889,6 @@
   <!-- Confetti burst layer for badge unlocks (purely decorative) -->
   <canvas id="badge-confetti" class="badge-confetti" aria-hidden="true"></canvas>
 
+  <script src="i18n.js"></script>
 </body>
 </html>
