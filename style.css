@@ -3528,3 +3528,117 @@ h4 {
     justify-self: start;
   }
 }
+
+
+/* =====================================================
+   Light theme
+   ===================================================== */
+[data-theme="light"] {
+  color-scheme: light;
+  --background: #f4f7fd;
+  --background-light: #ffffff;
+  --card: rgba(255, 255, 255, 0.9);
+  --card-hover: #ffffff;
+  --text: #0f1a33;
+  --muted: #53617f;
+  --border: rgba(53, 84, 160, 0.22);
+  --accent: #0b7fc0;
+  --accent-two: #5b4ae0;
+  --accent-three: #0c9a74;
+}
+[data-theme="light"] body::before {
+  opacity: 0.7;
+  background-image:
+    linear-gradient(rgba(60, 90, 160, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(60, 90, 160, 0.08) 1px, transparent 1px);
+}
+[data-theme="light"] .navbar { background: rgba(244, 247, 253, 0.9); }
+[data-theme="light"] .chat-messages { background: rgba(255, 255, 255, 0.65); }
+[data-theme="light"] .site-stats { background: rgba(255, 255, 255, 0.75); }
+[data-theme="light"] .badge-toast,
+[data-theme="light"] .welcome-toast { background: #ffffff; color: var(--text); box-shadow: 0 10px 30px rgba(40, 60, 120, 0.18); }
+[data-theme="light"] .primary-button,
+[data-theme="light"] .nav-upload,
+[data-theme="light"] .profile-avatar,
+[data-theme="light"] .chat-msg.mine .chat-bubble { color: #ffffff; }
+[data-theme="light"] .gradient-text { filter: none; }
+
+/* =====================================================
+   Navbar controls: theme + language
+   ===================================================== */
+.nav-prefs { display: flex; align-items: center; gap: 8px; }
+.theme-toggle {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 10px; cursor: pointer;
+  color: var(--text); background: var(--card); border: 1px solid var(--border);
+  transition: background 0.2s, border-color 0.2s;
+}
+.theme-toggle:hover { border-color: var(--accent); background: var(--card-hover); }
+.lang-switch { display: inline-flex; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--card); }
+.lang-switch button {
+  min-width: 34px; height: 34px; padding: 0 8px; border: 0; cursor: pointer;
+  background: transparent; color: var(--muted); font: 600 12px "Inter", sans-serif; letter-spacing: 0.04em;
+}
+.lang-switch button[lang="ar"] { font-family: "Cairo", "Inter", sans-serif; font-size: 15px; }
+.lang-switch button:hover { color: var(--text); }
+.lang-switch button.active { background: var(--accent); color: #03101b; }
+[data-theme="light"] .lang-switch button.active { color: #ffffff; }
+
+/* =====================================================
+   Arabic / RTL
+   ===================================================== */
+[dir="rtl"] body,
+[dir="rtl"] button,
+[dir="rtl"] input,
+[dir="rtl"] textarea,
+[dir="rtl"] select { font-family: "Cairo", "Inter", sans-serif; }
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4 { font-family: "Cairo", "Space Grotesk", sans-serif; letter-spacing: 0; }
+[dir="rtl"] .logo, [dir="rtl"] .logo-text, [dir="rtl"] input[type="email"], [dir="rtl"] input[type="password"] { direction: ltr; }
+[dir="rtl"] input[type="email"], [dir="rtl"] input[type="password"] { text-align: right; }
+
+/* Auto-mirrored left/right rules (generated from the stylesheet above) */
+[dir="rtl"] .nav-account:has(#nav-messages-badge:not([hidden])) .nav-account-trigger::after{right:auto;left:1px}
+[dir="rtl"] .nav-account-menu-item{text-align:right}
+[dir="rtl"] .auth-modal-close{right:auto;left:18px}
+[dir="rtl"] .notice-box{border-right:3px solid var(--accent)}
+@media (max-width: 650px){
+[dir="rtl"] .archive-section,[dir="rtl"] .system-info-section{padding-left:0;padding-right:0;padding-right:24px;padding-left:24px}
+}
+[dir="rtl"] .hero::before{left:auto;right:-160px}
+[dir="rtl"] .atom-nucleus span:nth-child(1){left:auto;right:10px}
+[dir="rtl"] .atom-nucleus span:nth-child(2){right:auto;left:8px}
+[dir="rtl"] .atom-nucleus span:nth-child(3){left:auto;right:20px}
+[dir="rtl"] /* Electron paths */
+
+.atom-orbit{left:auto;right:50%}
+[dir="rtl"] .electron-one{left:auto;right:125px}
+[dir="rtl"] .electron-two{right:auto;left:12px}
+[dir="rtl"] .electron-three{left:auto;right:125px}
+[dir="rtl"] .orb-one{right:auto;left:0}
+[dir="rtl"] .orb-two{left:auto;right:0}
+[dir="rtl"] .orb-three{left:auto;right:40%}
+[dir="rtl"] .symbol-one{left:auto;right:12%}
+[dir="rtl"] .symbol-two{right:auto;left:8%}
+[dir="rtl"] .symbol-three{right:auto;left:15%}
+[dir="rtl"] .symbol-four{left:auto;right:18%}
+[dir="rtl"] .particle-one{left:auto;right:48%}
+[dir="rtl"] .particle-two{right:auto;left:2%}
+[dir="rtl"] .particle-three{right:auto;left:8%}
+[dir="rtl"] .particle-four{left:auto;right:45%}
+[dir="rtl"] .particle-five{left:auto;right:0}
+[dir="rtl"] .particle-six{left:auto;right:20%}
+[dir="rtl"] .logo-prompt{margin-right:0;margin-left:1px}
+[dir="rtl"] .logo-cursor{margin-left:0;margin-right:4px}
+[dir="rtl"] /* =========================================
+   Messages: inbox + chat
+   ========================================= */
+.nav-badge{margin-left:0;margin-right:6px}
+[dir="rtl"] .chat-header{padding-right:0;padding-left:28px}
+[dir="rtl"] .stars-fill{left:auto;right:0}
+[dir="rtl"] .prof-detail-head{padding-right:0;padding-left:24px}
+[dir="rtl"] .review-report-btn{margin-left:0;margin-right:auto}
+[dir="rtl"] .legal-tab-panel ul{padding-left:0;padding-right:20px}
+[dir="rtl"] .course-bar-value{right:auto;left:-22px}
+@media (max-width: 640px){
+[dir="rtl"] .course-bar-value{right:auto;left:0}
+}
