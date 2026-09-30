@@ -2999,7 +2999,10 @@
         renderStars(ratingBox, Number(userVote.rating || 0), average, count);
 
         ratingBox.querySelectorAll('.module-rating-star').forEach(function(button) {
-          button.addEventListener('click', function() {
+          button.addEventListener('click', function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+
             const currentUser = auth.currentUser;
             if (!currentUser) {
               if (typeof openAuthModal === 'function') openAuthModal('signin');
