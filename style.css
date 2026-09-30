@@ -6287,172 +6287,190 @@ html {
 
 
 /* =========================================================
-   FPL CAMPUS FEATURE
+   FPL CAMPUS FEATURE — COMPACT PREMIUM
    ========================================================= */
 
 .fpl-campus-feature {
+  position: relative;
   display: grid;
-  grid-template-columns: minmax(280px, .92fr) minmax(0, 1.08fr);
-  align-items: center;
-  gap: clamp(28px, 5vw, 58px);
+  grid-template-columns: minmax(250px, .72fr) minmax(0, 1.28fr);
+  align-items: stretch;
   max-width: 1180px;
-  margin: 18px auto 76px;
-  padding: 0 0;
+  min-height: 285px;
+  margin: 22px auto 58px;
+  overflow: hidden;
+  border: 1px solid rgba(102,217,255,.13);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(102,217,255,.08), transparent 30%),
+    linear-gradient(120deg, rgba(255,255,255,.025), rgba(102,217,255,.018)),
+    var(--card);
+  box-shadow: 0 24px 65px rgba(0,0,0,.13), inset 0 1px 0 rgba(255,255,255,.045);
 }
 
 .fpl-campus-image-wrap {
   position: relative;
-  min-height: 310px;
+  min-height: 285px;
   overflow: hidden;
-  border: 1px solid rgba(102,217,255,.14);
-  border-radius: 24px;
-  background: var(--card);
-  box-shadow: 0 24px 65px rgba(0,0,0,.16);
+  background: #08111f;
 }
 
 .fpl-campus-image {
   display: block;
   width: 100%;
   height: 100%;
-  min-height: 310px;
+  min-height: 285px;
   object-fit: cover;
   object-position: center;
-  filter: saturate(.92) contrast(1.02);
+  filter: saturate(.88) contrast(1.03);
   transform: scale(1.01);
-  transition: transform .7s cubic-bezier(.2,.75,.2,1), filter .7s ease;
+  transition: transform .65s cubic-bezier(.2,.75,.2,1), filter .65s ease;
 }
 
 .fpl-campus-image-wrap::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 50%, rgba(3,7,18,.58));
+  background: linear-gradient(90deg, rgba(3,7,18,.02) 45%, rgba(3,7,18,.58) 100%), linear-gradient(180deg, transparent 58%, rgba(3,7,18,.48));
   pointer-events: none;
 }
 
 .fpl-campus-image-wrap:hover .fpl-campus-image {
   transform: scale(1.045);
-  filter: saturate(1) contrast(1.04);
+  filter: saturate(.98) contrast(1.05);
 }
 
 .fpl-campus-image-label {
   position: absolute;
   z-index: 2;
-  left: 16px;
-  bottom: 15px;
-  padding: 7px 10px;
-  border: 1px solid rgba(255,255,255,.16);
-  border-radius: 8px;
-  background: rgba(3,7,18,.48);
+  left: 14px;
+  bottom: 13px;
+  padding: 6px 9px;
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 7px;
+  background: rgba(3,7,18,.46);
   backdrop-filter: blur(10px);
   color: #fff;
-  font-size: .58rem;
+  font-size: .55rem;
   font-weight: 800;
-  letter-spacing: .14em;
+  letter-spacing: .13em;
 }
 
 .fpl-campus-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   max-width: 560px;
+  padding: 34px clamp(28px, 4vw, 48px);
 }
 
 .fpl-campus-copy .section-label {
-  margin-bottom: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  width: fit-content;
+  margin-bottom: 12px;
+  color: var(--accent);
+  font-size: .58rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.fpl-campus-copy .section-label::before {
+  content: "✦";
+  font-size: .62rem;
 }
 
 .fpl-campus-copy h2 {
   margin: 0;
-  max-width: 600px;
+  max-width: 520px;
   font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-size: clamp(1.75rem, 3.1vw, 2.55rem);
   line-height: 1.02;
   letter-spacing: -.045em;
+  background: linear-gradient(105deg, var(--text) 18%, #bfefff 72%, #a99cff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fpl-campus-copy h2::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 2px;
+  margin-top: 13px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-two));
+  box-shadow: 0 0 13px rgba(102,217,255,.25);
 }
 
 .fpl-campus-copy p {
-  max-width: 520px;
-  margin: 18px 0 22px;
+  max-width: 500px;
+  margin: 14px 0 17px;
   color: var(--muted);
-  font-size: .9rem;
-  line-height: 1.75;
+  font-size: .78rem;
+  line-height: 1.65;
 }
 
 .fpl-campus-link {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  padding: 9px 13px;
-  border: 1px solid rgba(102,217,255,.17);
-  border-radius: 9px;
-  background: rgba(102,217,255,.045);
+  gap: 8px;
+  width: fit-content;
+  padding: 8px 11px;
+  border: 1px solid rgba(102,217,255,.16);
+  border-radius: 8px;
+  background: rgba(102,217,255,.04);
   color: var(--accent);
-  font-size: .72rem;
+  font-size: .66rem;
   font-weight: 700;
   text-decoration: none;
   transition: transform .22s ease, border-color .22s ease, background .22s ease;
 }
 
 .fpl-campus-link:hover {
-  transform: translateY(-2px);
-  border-color: rgba(102,217,255,.34);
-  background: rgba(102,217,255,.08);
+  transform: translateY(-1px);
+  border-color: rgba(102,217,255,.32);
+  background: rgba(102,217,255,.075);
 }
 
-.fpl-campus-link span {
-  transition: transform .2s ease;
-}
-
-.fpl-campus-link:hover span {
-  transform: translate(2px,-2px);
-}
+.fpl-campus-link span { transition: transform .2s ease; }
+.fpl-campus-link:hover span { transform: translate(2px,-2px); }
 
 .fpl-campus-credit {
   display: block;
-  margin-top: 12px;
+  margin-top: 9px;
   color: var(--muted);
-  font-size: .58rem;
-  opacity: .75;
+  font-size: .52rem;
+  opacity: .7;
 }
 
-[data-theme="light"] .fpl-campus-image-wrap {
-  box-shadow: 0 20px 55px rgba(30,50,90,.10);
+[data-theme="light"] .fpl-campus-feature {
+  background: radial-gradient(circle at 8% 0%, rgba(102,217,255,.09), transparent 30%), linear-gradient(120deg, rgba(255,255,255,.72), rgba(247,250,255,.96)), var(--card);
+  box-shadow: 0 20px 55px rgba(30,50,90,.09);
 }
 
 @media (max-width: 800px) {
-  .fpl-campus-feature {
-    grid-template-columns: 1fr;
-    gap: 26px;
-    margin-bottom: 58px;
-  }
-
-  .fpl-campus-copy {
-    max-width: 700px;
-  }
+  .fpl-campus-feature { grid-template-columns: 38% 62%; min-height: 245px; }
+  .fpl-campus-image-wrap, .fpl-campus-image { min-height: 245px; }
+  .fpl-campus-copy { padding: 24px; }
+  .fpl-campus-copy h2 { font-size: 1.8rem; }
 }
 
 @media (max-width: 600px) {
   .fpl-campus-feature {
-    margin: 8px 12px 50px;
-  }
-
-  .fpl-campus-image-wrap,
-  .fpl-campus-image {
-    min-height: 245px;
-  }
-
-  .fpl-campus-image-wrap {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    margin: 8px 12px 45px;
     border-radius: 19px;
   }
-
-  .fpl-campus-copy h2 {
-    font-size: 2rem;
-  }
+  .fpl-campus-image-wrap, .fpl-campus-image { min-height: 190px; height: 190px; }
+  .fpl-campus-copy { padding: 23px 20px 25px; }
+  .fpl-campus-copy h2 { font-size: 1.9rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .fpl-campus-image,
-  .fpl-campus-link,
-  .fpl-campus-link span {
-    transition: none;
-  }
+  .fpl-campus-image, .fpl-campus-link, .fpl-campus-link span { transition: none; }
 }
-
