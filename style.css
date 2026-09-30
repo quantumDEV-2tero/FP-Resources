@@ -7367,3 +7367,31 @@ html {
     min-height: 155px;
   }
 }
+
+
+/* Archive unavailable resource cards */
+.archive-section .module-card-unavailable {
+  cursor: default;
+  opacity: .72;
+}
+
+.archive-section .module-card-unavailable:hover {
+  transform: none;
+  border-color: var(--border);
+  background: var(--card);
+  box-shadow: none;
+}
+
+.archive-section .module-card-unavailable .module-action {
+  color: var(--muted);
+  cursor: default;
+}
+
+.archive-section .module-card-unavailable::after {
+  opacity: .18;
+}
+
+[data-theme="light"] .archive-section .module-card-unavailable {
+  opacity: .68;
+}
+
