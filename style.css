@@ -7451,10 +7451,6 @@ html {
   z-index: 6;
 }
 
-.archive-section .module-card-unavailable {
-  padding-bottom: 22px;
-}
-
 @media (max-width: 600px) {
   .archive-section .module-card {
     min-height: 250px;
