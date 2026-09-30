@@ -585,7 +585,28 @@
 
 
     <!-- Archive Section -->
-    <section id="archive" class="archive-section">
+    
+
+<!-- Gemini Notebook AI feature advertisement -->
+<section class="ai-notebook-ad" id="ai-notebook-feature" aria-labelledby="ai-notebook-title">
+  <div class="ai-notebook-ad-copy">
+    <span class="section-label">NEW • AI STUDY ASSISTANT</span>
+    <h2 id="ai-notebook-title">Ask AI about your course.</h2>
+    <p>Open the course notebook and ask questions about the materials, summaries, concepts, and resources prepared for that module.</p>
+    <div class="ai-notebook-ad-actions">
+      <a href="#archive" class="button primary-button">Explore AI Courses</a>
+      <span class="ai-notebook-ad-note">Powered by your configured Gemini Notebook links</span>
+    </div>
+  </div>
+  <div class="ai-notebook-video-wrap">
+    <video class="ai-notebook-video" controls muted playsinline preload="metadata" poster="./logo.png.png">
+      <source src="./assets/gemini-notebook-promo.mp4" type="video/mp4" />
+      Your browser does not support the promotional video.
+    </video>
+    <div class="ai-notebook-video-label">FP Library • Gemini Notebook</div>
+  </div>
+</section>
+<section id="archive" class="archive-section">
 
       <div class="section-heading">
         <span class="section-label">ACADEMIC ARCHIVE</span>
@@ -3011,5 +3032,84 @@
   <canvas id="badge-confetti" class="badge-confetti" aria-hidden="true"></canvas>
 
   <script src="i18n.js"></script>
+
+
+<!-- AI Notebook configuration and Ask AI course buttons -->
+<script>
+  /* Replace these placeholder values with your shared Gemini Notebook URLs. */
+  const AI_NOTEBOOK_LINKS = {
+    "S1-M01": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S1_M01",
+    "S1-M02": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S1_M02",
+    "S1-M03": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S1_M03",
+    "S1-M04": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S1_M04",
+    "S1-M05": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S1_M05",
+    "S1-M06": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S1_M06",
+    "S2-M01": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S2_M01",
+    "S2-M02": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S2_M02",
+    "S2-M03": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S2_M03",
+    "S2-M04": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S2_M04",
+    "S2-M05": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S2_M05",
+    "S2-M06": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S2_M06",
+    "S2-M07": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S2_M07",
+    "S3-M01": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S3_M01",
+    "S3-M02": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S3_M02",
+    "S3-M03": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S3_M03",
+    "S3-M04": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S3_M04",
+    "S3-M05": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S3_M05",
+    "FRENCH": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_FRENCH",
+    "S3-M07": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S3_M07",
+    "S4-M01": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S4_M01",
+    "S4-M02": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S4_M02",
+    "S4-M03": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S4_M03",
+    "S4-M05": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S4_M05",
+    "S4-M06": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S4_M06",
+    "S4-M07": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S4_M07"
+  };
+
+  (function initAINotebookButtons() {
+    function normaliseModuleCode(value) {
+      const match = String(value || '').match(/S(\\d+)\\s*[•·\\-]\\s*M(\\d+)/i);
+      return match ? 'S' + match[1] + '-M' + match[2] : '';
+    }
+
+    function notebookKeyForCard(card) {
+      const code = normaliseModuleCode(card.querySelector('.module-code')?.textContent);
+      if (code === 'S3-M06' || code === 'S4-M04') return 'FRENCH';
+      return code;
+    }
+
+    function isConfigured(url) {
+      return typeof url === 'string' && url.trim() !== '' && !url.startsWith('REPLACE_WITH_');
+    }
+
+    function openNotebook(key) {
+      const url = AI_NOTEBOOK_LINKS[key];
+      if (isConfigured(url)) {
+        window.open(url, '_blank', 'noopener,noreferrer');
+        return;
+      }
+      alert('This AI Notebook is not configured yet. Replace the placeholder for "' + key + '" in the AI_NOTEBOOK_LINKS section near the bottom of index.html.');
+    }
+
+    document.querySelectorAll('.module-card').forEach(function(card) {
+      if (card.querySelector('.ask-ai-button')) return;
+      const key = notebookKeyForCard(card);
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'ask-ai-button';
+      button.textContent = '✦ Ask AI';
+      button.setAttribute('aria-label', 'Ask AI about ' + (card.querySelector('h3,h4')?.textContent || 'this course'));
+      button.dataset.aiNotebookKey = key;
+      button.addEventListener('click', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        openNotebook(key);
+      });
+      card.appendChild(button);
+      card.classList.add('has-ai-button');
+    });
+  })();
+</script>
+
 </body>
 </html>
