@@ -4864,3 +4864,215 @@ h1 {
     min-height: 220px;
   }
 }
+
+
+/* =========================================================
+   HOMEPAGE PRODUCT FLOW
+   Hero → AI → Archive should read as one continuous experience.
+   ========================================================= */
+
+main {
+  position: relative;
+  overflow: clip;
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  padding-bottom: 128px;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 8%;
+  right: 8%;
+  bottom: 18px;
+  height: 190px;
+  background: radial-gradient(ellipse at center, rgba(102,217,255,.11), transparent 68%);
+  filter: blur(18px);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-buttons .primary-button {
+  box-shadow: 0 14px 38px rgba(102,217,255,.20);
+}
+
+.hero-buttons .primary-button::after {
+  content: "↘";
+  margin-left: 8px;
+  font-size: .95em;
+  transition: transform .2s ease;
+}
+
+.hero-buttons .primary-button:hover::after {
+  transform: translate(2px, 2px);
+}
+
+/* Let the AI feature visually grow out of the hero instead of starting as a new card. */
+.ai-notebook-ad {
+  z-index: 4;
+  margin-top: -42px;
+  margin-bottom: 0;
+  box-shadow:
+    0 35px 100px rgba(0,0,0,.30),
+    0 -18px 70px rgba(102,217,255,.045),
+    inset 0 1px 0 rgba(255,255,255,.06);
+}
+
+.ai-notebook-ad::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, rgba(102,217,255,.20), transparent 34%, rgba(139,124,255,.12));
+  opacity: .5;
+  pointer-events: none;
+}
+
+.ai-notebook-ad-copy {
+  padding-left: 54px;
+}
+
+.ai-notebook-ad-copy .section-label {
+  position: relative;
+}
+
+.ai-notebook-ad-copy .section-label::before {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 1px;
+  margin: 0 9px 3px 0;
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(102,217,255,.55);
+}
+
+.ai-notebook-ad-actions .primary-button::after {
+  content: " →";
+}
+
+.ai-notebook-video-label {
+  background: rgba(3,7,17,.62);
+}
+
+/* The archive begins with a quiet visual reset, not a hard section break. */
+.archive-section {
+  position: relative;
+  z-index: 1;
+  margin-top: 0;
+  padding-top: 112px;
+}
+
+.archive-section::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -100px;
+  left: 0;
+  right: 0;
+  height: 250px;
+  background: linear-gradient(
+    to bottom,
+    rgba(8,13,27,0),
+    rgba(8,13,27,.72) 55%,
+    var(--background) 100%
+  );
+  pointer-events: none;
+}
+
+.archive-section .section-heading {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.archive-section .section-heading .section-label {
+  margin-bottom: 16px;
+}
+
+.archive-section .section-heading p {
+  max-width: 590px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.module-search {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.favorites-toggle {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.upload-notice {
+  margin-top: 34px;
+}
+
+/* A subtle journey marker between AI and the archive. */
+.ai-notebook-ad + .archive-section .section-heading::before {
+  content: "YOUR COURSE LIBRARY";
+  display: block;
+  width: fit-content;
+  margin: 0 auto 18px;
+  padding: 6px 10px;
+  border: 1px solid rgba(102,217,255,.14);
+  border-radius: 999px;
+  background: rgba(102,217,255,.045);
+  color: var(--muted);
+  font: 700 .58rem "JetBrains Mono", monospace;
+  letter-spacing: 1.5px;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding-bottom: 105px;
+  }
+
+  .ai-notebook-ad {
+    margin-top: -32px;
+  }
+
+  .ai-notebook-ad-copy {
+    padding-left: 30px;
+  }
+
+  .archive-section {
+    padding-top: 88px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding-bottom: 86px;
+  }
+
+  .ai-notebook-ad {
+    margin-top: -24px;
+  }
+
+  .ai-notebook-ad-copy {
+    padding-left: 22px;
+  }
+
+  .archive-section {
+    padding-top: 72px;
+  }
+
+  .ai-notebook-ad + .archive-section .section-heading::before {
+    margin-bottom: 14px;
+  }
+}
