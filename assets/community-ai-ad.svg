@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 760" role="img" aria-labelledby="title desc">
+<title id="title">FP Library AI and Student Community</title>
+<desc id="desc">Sign in to access AI study tools, connect with students, share resources and join study conversations.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#061329"/><stop offset=".52" stop-color="#071f46"/><stop offset="1" stop-color="#15104b"/>
+  </linearGradient>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#43d9ff"/><stop offset="1" stop-color="#8b7cff"/>
+  </linearGradient>
+  <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#102b55" stop-opacity=".96"/><stop offset="1" stop-color="#10153e" stop-opacity=".94"/>
+  </linearGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="16" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="soft"><feGaussianBlur stdDeviation="45"/></filter>
+</defs>
+<rect width="1600" height="760" rx="34" fill="url(#bg)"/>
+<circle cx="1290" cy="120" r="190" fill="#3aa9ff" opacity=".10" filter="url(#soft)"/>
+<circle cx="500" cy="690" r="180" fill="#806cff" opacity=".09" filter="url(#soft)"/>
+<rect x="26" y="26" width="1548" height="708" rx="28" fill="none" stroke="#4aaeff" stroke-opacity=".28"/>
+<g font-family="Inter,Arial,sans-serif">
+  <rect x="78" y="72" width="270" height="48" rx="24" fill="#0d3768" stroke="#43d9ff" stroke-opacity=".55"/>
+  <text x="213" y="103" text-anchor="middle" fill="#bfeeff" font-size="18" font-weight="700">✦ UNLOCK THE FULL EXPERIENCE</text>
+  <text x="78" y="205" fill="#f5f9ff" font-size="58" font-weight="800">Sign In to Access</text>
+  <text x="78" y="270" fill="url(#accent)" font-size="62" font-weight="800">AI &amp; Student Community</text>
+  <text x="78" y="326" fill="#b7cbed" font-size="22">Study smarter, connect with other FP students,</text>
+  <text x="78" y="360" fill="#b7cbed" font-size="22">share resources and ask questions together.</text>
+
+  <g transform="translate(78 420)">
+    <rect width="235" height="104" rx="18" fill="url(#card)" stroke="#43d9ff" stroke-opacity=".34"/>
+    <circle cx="43" cy="51" r="24" fill="#0b5aa4" stroke="#43d9ff"/>
+    <text x="43" y="59" text-anchor="middle" fill="#fff" font-size="24">✦</text>
+    <text x="82" y="44" fill="#fff" font-size="17" font-weight="700">AI Notebooks</text>
+    <text x="82" y="69" fill="#8fb3df" font-size="13">Study with course AI</text>
+  </g>
+  <g transform="translate(331 420)">
+    <rect width="235" height="104" rx="18" fill="url(#card)" stroke="#9b83ff" stroke-opacity=".42"/>
+    <circle cx="43" cy="51" r="24" fill="#432d9e" stroke="#a98dff"/>
+    <text x="43" y="59" text-anchor="middle" fill="#fff" font-size="23">☏</text>
+    <text x="82" y="44" fill="#fff" font-size="17" font-weight="700">Connect &amp; Chat</text>
+    <text x="82" y="69" fill="#a9a0d9" font-size="13">Talk with other students</text>
+  </g>
+  <g transform="translate(78 540)">
+    <rect width="235" height="104" rx="18" fill="url(#card)" stroke="#28d8a1" stroke-opacity=".42"/>
+    <circle cx="43" cy="51" r="24" fill="#087d68" stroke="#28d8a1"/>
+    <text x="43" y="59" text-anchor="middle" fill="#fff" font-size="22">▱</text>
+    <text x="82" y="44" fill="#fff" font-size="17" font-weight="700">Share Resources</text>
+    <text x="82" y="69" fill="#9edbc9" font-size="13">Notes, files &amp; help</text>
+  </g>
+  <g transform="translate(331 540)">
+    <rect width="235" height="104" rx="18" fill="url(#card)" stroke="#ffbf55" stroke-opacity=".42"/>
+    <circle cx="43" cy="51" r="24" fill="#8c5b0b" stroke="#ffbf55"/>
+    <text x="43" y="59" text-anchor="middle" fill="#fff" font-size="22">●</text>
+    <text x="82" y="44" fill="#fff" font-size="17" font-weight="700">Study Together</text>
+    <text x="82" y="69" fill="#e1c99a" font-size="13">Find your study community</text>
+  </g>
+
+  <rect x="78" y="668" width="270" height="54" rx="27" fill="url(#accent)"/>
+  <text x="213" y="703" text-anchor="middle" fill="#fff" font-size="18" font-weight="800">SIGN IN NOW  →</text>
+
+  <g transform="translate(670 90) rotate(-2 430 285)">
+    <rect x="0" y="0" width="790" height="555" rx="28" fill="#07152e" stroke="#4aaeff" stroke-opacity=".5"/>
+    <rect x="24" y="24" width="742" height="58" rx="16" fill="#0c2243"/>
+    <circle cx="52" cy="53" r="8" fill="#43d9ff"/><circle cx="78" cy="53" r="8" fill="#8b7cff"/><circle cx="104" cy="53" r="8" fill="#28d8a1"/>
+    <text x="132" y="60" fill="#dbeaff" font-size="16" font-weight="700">FP Library • Community</text>
+
+    <rect x="38" y="105" width="200" height="414" rx="18" fill="#091c38"/>
+    <text x="64" y="145" fill="#7ea7d5" font-size="13">YOUR COMMUNITY</text>
+    <text x="64" y="190" fill="#fff" font-size="20" font-weight="700">Study. Connect.</text>
+    <text x="64" y="218" fill="#8eb5df" font-size="13">Grow together.</text>
+    <rect x="60" y="250" width="154" height="58" rx="14" fill="#102f59" stroke="#43d9ff" stroke-opacity=".25"/>
+    <text x="77" y="275" fill="#fff" font-size="17" font-weight="700">AI Tools</text>
+    <text x="77" y="296" fill="#7fa8d6" font-size="11">Course assistants</text>
+    <rect x="60" y="322" width="154" height="58" rx="14" fill="#102342"/>
+    <text x="77" y="347" fill="#fff" font-size="17" font-weight="700">Students</text>
+    <text x="77" y="368" fill="#7fa8d6" font-size="11">Connect &amp; chat</text>
+    <rect x="60" y="394" width="154" height="58" rx="14" fill="#102342"/>
+    <text x="77" y="419" fill="#fff" font-size="17" font-weight="700">Resources</text>
+    <text x="77" y="440" fill="#7fa8d6" font-size="11">Share &amp; discover</text>
+
+    <rect x="260" y="105" width="504" height="170" rx="18" fill="url(#card)" stroke="#4aaeff" stroke-opacity=".25"/>
+    <text x="288" y="145" fill="#fff" font-size="27" font-weight="800">Your FP community is here.</text>
+    <text x="288" y="172" fill="#88afd9" font-size="13">Find classmates, discuss modules and share what helps.</text>
+    <rect x="288" y="198" width="142" height="48" rx="12" fill="#0b2c55"/>
+    <text x="359" y="220" text-anchor="middle" fill="#8fdfff" font-size="17" font-weight="800">2.4K+</text>
+    <text x="359" y="237" text-anchor="middle" fill="#7698c1" font-size="10">STUDENTS</text>
+    <rect x="444" y="198" width="142" height="48" rx="12" fill="#0b2c55"/>
+    <text x="515" y="220" text-anchor="middle" fill="#a998ff" font-size="17" font-weight="800">120+</text>
+    <text x="515" y="237" text-anchor="middle" fill="#7698c1" font-size="10">RESOURCES</text>
+    <rect x="600" y="198" width="142" height="48" rx="12" fill="#0b2c55"/>
+    <text x="671" y="220" text-anchor="middle" fill="#72e3bd" font-size="17" font-weight="800">24/7</text>
+    <text x="671" y="237" text-anchor="middle" fill="#7698c1" font-size="10">COMMUNITY</text>
+
+    <rect x="260" y="297" width="504" height="222" rx="18" fill="#091a34" stroke="#7699c8" stroke-opacity=".18"/>
+    <text x="288" y="335" fill="#fff" font-size="18" font-weight="700">Recent discussions</text>
+    <g transform="translate(288 360)">
+      <circle cx="22" cy="22" r="22" fill="#294c78"/>
+      <text x="57" y="18" fill="#fff" font-size="13" font-weight="700">S3 Physics</text>
+      <text x="57" y="37" fill="#779bc4" font-size="11">Anyone have a useful summary?</text>
+      <text x="444" y="28" text-anchor="end" fill="#5e7da3" font-size="10">2m</text>
+    </g>
+    <line x1="288" y1="410" x2="736" y2="410" stroke="#7898bd" stroke-opacity=".12"/>
+    <g transform="translate(288 424)">
+      <circle cx="22" cy="22" r="22" fill="#513f88"/>
+      <text x="57" y="18" fill="#fff" font-size="13" font-weight="700">Thermodynamics</text>
+      <text x="57" y="37" fill="#779bc4" font-size="11">Looking for a study partner?</text>
+      <text x="444" y="28" text-anchor="end" fill="#5e7da3" font-size="10">12m</text>
+    </g>
+    <rect x="545" y="55" width="185" height="44" rx="22" fill="#102d57" stroke="#43d9ff" stroke-opacity=".35"/>
+    <text x="638" y="82" text-anchor="middle" fill="#bcecff" font-size="13" font-weight="700">✦ Let's study together!</text>
+  </g>
+
+  <text x="1135" y="696" fill="#79a4d4" font-size="15" text-anchor="middle">Your study journey is better together.</text>
+</g>
+</svg>
