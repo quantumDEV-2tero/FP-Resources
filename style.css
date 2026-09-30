@@ -3888,80 +3888,70 @@ h4 {
 
 
 .project-owner-instagram {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  width: 100%;
-  margin-top: 11px;
-  padding: 9px 11px;
-  border: 1px solid rgba(102,217,255,.13);
-  border-radius: 12px;
-  background: rgba(255,255,255,.025);
-  color: var(--text);
+  gap: 7px;
+  width: fit-content;
+  margin-top: 9px;
+  padding: 5px 8px;
+  border: 1px solid rgba(102,217,255,.11);
+  border-radius: 8px;
+  background: rgba(255,255,255,.018);
+  color: var(--muted);
   text-decoration: none;
-  transition: transform .22s ease, border-color .22s ease, background .22s ease, box-shadow .22s ease;
+  transition: border-color .2s ease, color .2s ease, background .2s ease;
 }
 
 .project-owner-instagram:hover {
-  transform: translateY(-1px);
-  border-color: rgba(102,217,255,.34);
-  background: rgba(102,217,255,.055);
-  box-shadow: 0 8px 22px rgba(0,0,0,.12);
+  border-color: rgba(102,217,255,.25);
+  background: rgba(102,217,255,.04);
+  color: var(--text);
 }
 
 .project-owner-instagram-icon {
   display: grid;
   place-items: center;
-  width: 31px;
-  height: 31px;
-  flex: 0 0 31px;
-  border: 1px solid rgba(102,217,255,.20);
-  border-radius: 9px;
   color: var(--accent);
-  background: rgba(102,217,255,.06);
+  line-height: 0;
 }
 
 .project-owner-instagram-text {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   min-width: 0;
-  flex: 1;
-  gap: 1px;
 }
 
 .project-owner-instagram-text small {
-  color: var(--muted);
-  font-size: .59rem;
-  font-weight: 700;
-  letter-spacing: 1.1px;
-  text-transform: uppercase;
+  display: none;
 }
 
 .project-owner-instagram-text strong {
   overflow: hidden;
-  color: var(--text);
-  font-size: .76rem;
-  font-weight: 700;
+  color: inherit;
+  font-size: .68rem;
+  font-weight: 600;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .project-owner-instagram-arrow {
-  color: var(--accent);
-  font-size: 1rem;
-  transition: transform .2s ease;
+  color: var(--muted);
+  font-size: .75rem;
+  line-height: 1;
+  transition: transform .2s ease, color .2s ease;
 }
 
 .project-owner-instagram:hover .project-owner-instagram-arrow {
-  transform: translate(2px, -2px);
+  color: var(--accent);
+  transform: translate(1px, -1px);
 }
 
 [data-theme="light"] .project-owner-instagram {
-  background: rgba(255,255,255,.55);
+  background: rgba(255,255,255,.45);
 }
 
 [data-theme="light"] .project-owner-instagram:hover {
-  background: rgba(102,217,255,.07);
+  background: rgba(102,217,255,.06);
 }
 
 .project-owner-copy {
