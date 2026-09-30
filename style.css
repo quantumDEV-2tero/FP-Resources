@@ -7140,3 +7140,91 @@ html {
     width: 100%;
   }
 }
+
+
+/* Archive cleanup: keep the heading, controls, contribution panel and library visually separated */
+.archive-section .archive-heading {
+  margin-bottom: 28px;
+}
+
+.archive-section .archive-heading h2 {
+  font-size: clamp(2.35rem, 4.6vw, 3.9rem);
+  line-height: .98;
+  letter-spacing: -.055em;
+  margin-bottom: 14px;
+}
+
+.archive-section .archive-heading p {
+  margin-top: 0;
+  max-width: 620px;
+}
+
+.archive-section .archive-heading-meta {
+  margin-top: 16px;
+}
+
+.archive-section .module-search {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.archive-section .favorites-toggle {
+  margin: 8px 0 22px;
+}
+
+.archive-section .upload-notice {
+  display: grid;
+  grid-template-columns: minmax(230px, auto) minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 20px;
+  margin: 0 0 22px;
+  padding: 18px 20px 18px 22px;
+}
+
+.archive-section .upload-notice-heading {
+  min-width: 0;
+}
+
+.archive-section .upload-notice p {
+  margin: 0;
+  max-width: 560px;
+}
+
+.archive-section .upload-document-button {
+  white-space: nowrap;
+}
+
+.archive-section .tronc-commun {
+  margin-top: 0;
+}
+
+@media (max-width: 850px) {
+  .archive-section .upload-notice {
+    grid-template-columns: 1fr auto;
+  }
+
+  .archive-section .upload-notice p {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .archive-section .archive-heading h2 {
+    font-size: 2.45rem;
+  }
+
+  .archive-section .upload-notice {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .archive-section .upload-notice p {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .archive-section .upload-document-button {
+    width: 100%;
+  }
+}
