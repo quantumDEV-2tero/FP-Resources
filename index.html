@@ -102,7 +102,7 @@
   <a href="#home">Home</a>
   <a href="#archive">Archive</a>
   <a href="#community-documents">Community Documents</a>
-  <a href="#course-difficulty">Course Difficulty</a>
+  <a href="#module-ratings">Module Ratings</a>
   <a href="#system-info">About</a>
 </nav>
 
@@ -1116,34 +1116,45 @@
   </div><!-- /#community-content -->
 </section>
 
-<!-- COURSE DIFFICULTY SECTION -->
-<section class="documents-section" id="course-difficulty">
+<!-- MODULE RATINGS SECTION -->
+<section class="documents-section module-ratings-section" id="module-ratings">
   <div class="section-heading">
-    <span class="section-kicker">Planifiez votre semestre</span>
-    <h2>Découvrez la difficulté de vos modules</h2>
+    <span class="section-kicker">Built around your courses</span>
+    <h2>Find what you need for your semester.</h2>
     <p>
-      Un aperçu rapide de tous les modules du Tronc Commun Physique (S1–S4) :
-      difficulté ressentie, nécessité pour la suite du cursus, et priorité
-      d'étude conseillée. Cliquez sur un semestre dans le menu pour l'ouvrir,
-      puis sur « Découvrir » pour accéder directement aux ressources du module.
-      Ce sont des estimations de départ — à ajuster avec les retours de la communauté.
+      Explore course materials, open the connected AI Notebook, and rate each
+      module based on your own experience. Your rating helps other students
+      understand how the community experiences each course.
     </p>
   </div>
 
-  <div class="course-layout">
-    <aside class="course-sidebar" aria-label="Semestres">
-      <h3>Semestres</h3>
-      <nav class="course-sidebar-nav" id="course-sidebar-nav"></nav>
-
-      <div class="course-sidebar-legend">
-        <span class="legend-item"><span class="legend-dot legend-dot-difficulty"></span>Difficulté</span>
-        <span class="legend-item"><span class="legend-dot legend-dot-necessity"></span>Nécessité</span>
-        <span class="legend-item"><span class="legend-dot legend-dot-priority"></span>Priorité</span>
+  <div class="module-ratings-intro">
+    <div class="module-ratings-intro-item">
+      <span class="module-ratings-intro-number">01</span>
+      <div>
+        <strong>Choose your module</strong>
+        <span>Find notes, exercises, exams, and other resources.</span>
       </div>
-      <p class="course-chart-note">Scores sur 10.</p>
-    </aside>
+    </div>
+    <div class="module-ratings-intro-item">
+      <span class="module-ratings-intro-number">02</span>
+      <div>
+        <strong>Study with AI</strong>
+        <span>Open the Gemini Notebook prepared for the course.</span>
+      </div>
+    </div>
+    <div class="module-ratings-intro-item">
+      <span class="module-ratings-intro-number">03</span>
+      <div>
+        <strong>Rate your experience</strong>
+        <span>Give the module 1–5 stars and help future students.</span>
+      </div>
+    </div>
+  </div>
 
-    <div class="course-chart-card" id="course-chart-card"></div>
+  <div class="module-rating-note">
+    <span class="module-rating-note-dot" aria-hidden="true"></span>
+    Ratings are community feedback, not official university assessments.
   </div>
 </section>
 
@@ -2897,131 +2908,7 @@
     });
 
     // =====================================================
-    // ---- Course difficulty chart: all Tronc Commun Physique modules (S1-S4) ----
-    // Difficulty / necessity / priority are illustrative starting scores (0-10),
-    // based on general student consensus — adjust freely as real feedback comes in.
-    // Links reuse the same Drive folders as the Tronc Commun archive above.
-    // =====================================================
-    const courseDifficultyData = [
-      { semester: 'Semestre 1', modules: [
-        { name: 'Algèbre 1',        difficulty: 6, necessity: 8, priority: 7, link: 'https://drive.google.com/drive/folders/1wQm03i9L7dIPj3YEIFK1J7shXyn_99Qd?usp=drive_link' },
-        { name: 'Analyse 1',        difficulty: 7, necessity: 9, priority: 8, link: 'https://drive.google.com/drive/folders/1mlQrf7zOvqagcRf176zOoXv5LH5QFdje?usp=sharing' },
-        { name: 'Thermodynamique',  difficulty: 6, necessity: 7, priority: 6, link: 'https://drive.google.com/drive/folders/1g3mn3aBkv_dBIXsIl-VwdveJX8AVK0Mt?usp=sharing' },
-        { name: 'Mécanique du point', difficulty: 7, necessity: 8, priority: 8, link: 'https://drive.google.com/drive/folders/1taFx2BHieqVoRj0LzUbsldAX88kxrq7g?usp=sharing' },
-        { name: 'Atomistique',      difficulty: 5, necessity: 6, priority: 5, link: 'https://drive.google.com/drive/folders/1ib6ZWbGkLDNKg2Jy4-0pAacE0zYRBMLj?usp=drive_link' },
-        { name: 'Thermochimie',     difficulty: 5, necessity: 5, priority: 4, link: 'https://drive.google.com/drive/folders/1hmUfK-C5WCi9mtplAKdYapuvhj9eAOLo?usp=sharing' }
-      ]},
-      { semester: 'Semestre 2', modules: [
-        { name: 'Algèbre 2',            difficulty: 7, necessity: 8, priority: 7, link: 'https://drive.google.com/drive/folders/1tIlZHLcDmfpLLmNmy1Yfv4il7192EMAw?usp=sharing' },
-        { name: 'Électricité',          difficulty: 7, necessity: 8, priority: 8, link: 'https://drive.google.com/drive/folders/1wWJXYqXza9mn2gFmTl3PmjXApuYPTdZI?usp=sharing' },
-        { name: 'Liaison chimique',     difficulty: 5, necessity: 5, priority: 4, link: 'https://drive.google.com/drive/folders/17G5o8gV_KQDZCpW4OmG3GrfIvkhFq6EU?usp=sharing' },
-        { name: 'Chimie en solution',   difficulty: 5, necessity: 5, priority: 4, link: 'https://drive.google.com/drive/folders/197LjVromZ_bji2IRsJ8tJGZmyZVJxrQ9?usp=sharing' },
-        { name: 'Optique géométrique',  difficulty: 6, necessity: 7, priority: 6, link: 'https://drive.google.com/drive/folders/174KvNu3PkxmLfmoUBbn3NZWR0RcQmw57?usp=sharing' },
-        { name: 'Digital Skills & IA',  difficulty: 3, necessity: 5, priority: 3, link: 'https://drive.google.com/drive/folders/1lewfmQLWu1YySa7fasf_0RIQryeH0a-H?usp=sharing' },
-        { name: 'Analyse 2',            difficulty: 8, necessity: 9, priority: 8, link: 'https://drive.google.com/drive/folders/1YvH4qfGIuY9vkThRq0_UhKozS-63c48e?usp=drive_link' }
-      ]},
-      { semester: 'Semestre 3', modules: [
-        { name: 'Mathématiques pour la Physique',        difficulty: 8, necessity: 9, priority: 9, link: 'https://drive.google.com/drive/folders/1FqF1xYtkUNrm2zN2Mbaq6HNKhhiIylE0?usp=sharing' },
-        { name: 'Électromagnétisme',                     difficulty: 9, necessity: 9, priority: 9, link: 'https://drive.google.com/drive/folders/1FBsZP0pkZ9EhEr59XtDQLWLjSmnqhG1S?usp=sharing' },
-        { name: 'Algorithmique et Programmation Python',  difficulty: 6, necessity: 6, priority: 5, link: 'https://drive.google.com/drive/folders/15Pihl2N0kSkFUxWWVuuF7gbcMlr-qEXl?usp=sharing' },
-        { name: 'Mécanique du Solide',                    difficulty: 7, necessity: 7, priority: 7, link: 'https://drive.google.com/drive/folders/1_wn1aKY7G-SpRLbAb84UN6L5oGDNIXKr?usp=sharing' },
-        { name: 'Circuits Électriques',                   difficulty: 6, necessity: 6, priority: 6, link: 'https://drive.google.com/drive/folders/1hkeD49iwctD1tuQP7K_WPGrGxjZ6H9r3?usp=sharing' },
-        { name: 'Français',                               difficulty: 3, necessity: 4, priority: 2, link: 'YOUR_GOOGLE_DRIVE_LINK_M06_HERE' },
-        { name: 'Thermodynamique 2',                      difficulty: 6, necessity: 6, priority: 5, link: 'https://drive.google.com/drive/folders/1NiHSTZiRYpfTqDq0fq2gdpDey15t9PzL?usp=sharing' }
-      ]},
-      { semester: 'Semestre 4', modules: [
-        { name: 'Analyse Numérique',            difficulty: 6, necessity: 6, priority: 5, link: 'https://drive.google.com/drive/folders/15NAHK9_pzu8g2LvBWnAJtI6i-dWHwhm6?usp=sharing' },
-        { name: 'Cristallographie Géométrique', difficulty: 6, necessity: 5, priority: 4, link: 'https://drive.google.com/drive/folders/1aXTTly1A77XepH0rvEps2KnZO76_8PCV?usp=drive_link' },
-        { name: 'Électronique Analogique',      difficulty: 7, necessity: 7, priority: 6, link: 'https://drive.google.com/drive/folders/1lR6onw7p1r3yhY1Hkmmk6iOoKAYn0EFt?usp=sharing' },
-        { name: 'Français',                     difficulty: 3, necessity: 4, priority: 2, link: 'YOUR_GOOGLE_DRIVE_LINK' },
-        { name: 'Mécanique Quantique',          difficulty: 9, necessity: 9, priority: 9, link: 'https://drive.google.com/drive/folders/1D1P2qkYIhL3VH3bPrKGSpa8z0T6ceMHt?usp=drive_link' },
-        { name: 'Électronique Numérique',       difficulty: 7, necessity: 6, priority: 5, link: 'https://drive.google.com/drive/folders/1E4Icmb_70wbyY0jEzx3qvFIigIMuJP-W?usp=drive_link' },
-        { name: 'Optique Ondulatoire',          difficulty: 7, necessity: 7, priority: 6, link: 'https://drive.google.com/drive/folders/170G4SltKK3GhbLj4AAFSyf4qzrjAgNRA?usp=drive_link' }
-      ]}
-    ];
-
-    function buildCourseBars(c) {
-      const bars = document.createElement('div');
-      bars.className = 'course-row-bars';
-      [
-        { key: 'difficulty', cls: 'bar-difficulty' },
-        { key: 'necessity',  cls: 'bar-necessity' },
-        { key: 'priority',   cls: 'bar-priority' }
-      ].forEach(function (m) {
-        const track = document.createElement('div');
-        track.className = 'course-bar-track';
-        const fill = document.createElement('div');
-        fill.className = 'course-bar-fill ' + m.cls;
-        fill.style.width = (c[m.key] * 10) + '%';
-        const val = document.createElement('span');
-        val.className = 'course-bar-value';
-        val.textContent = c[m.key];
-        track.appendChild(fill);
-        track.appendChild(val);
-        bars.appendChild(track);
-      });
-      return bars;
-    }
-
-    function renderCourseChart() {
-      const nav = document.getElementById('course-sidebar-nav');
-      const card = document.getElementById('course-chart-card');
-      if (!nav || !card) return;
-      nav.innerHTML = '';
-      card.innerHTML = '';
-
-      courseDifficultyData.forEach(function (sem, i) {
-        const semId = 'course-' + sem.semester.replace(/\s+/g, '-').toLowerCase();
-
-        // Sidebar link
-        const navLink = document.createElement('a');
-        navLink.href = '#' + semId;
-        navLink.innerHTML = sem.semester + ' <span class="course-sidebar-count">' + sem.modules.length + '</span>';
-        nav.appendChild(navLink);
-
-        // Semester accordion (reuses the Tronc Commun accordion styling)
-        const details = document.createElement('details');
-        details.className = 'tronc-commun';
-        details.id = semId;
-        if (i === 0) details.open = true;
-
-        const summary = document.createElement('summary');
-        summary.className = 'tronc-commun-summary';
-        summary.innerHTML =
-          '<div><span class="semester-number">S' + (i + 1) + '</span><h3>' + sem.semester + '</h3></div>' +
-          '<span class="tronc-commun-chevron" aria-hidden="true">▾</span>';
-        details.appendChild(summary);
-
-        const body = document.createElement('div');
-        body.className = 'tronc-commun-body';
-
-        sem.modules.forEach(function (c) {
-          const row = document.createElement('div');
-          row.className = 'course-row';
-
-          const label = document.createElement('div');
-          label.className = 'course-row-label';
-          label.textContent = c.name;
-          row.appendChild(label);
-
-          row.appendChild(buildCourseBars(c));
-
-          const discover = document.createElement('a');
-          discover.className = 'course-discover-link';
-          discover.href = c.link;
-          discover.target = '_blank';
-          discover.rel = 'noopener noreferrer';
-          discover.textContent = 'Découvrir →';
-          row.appendChild(discover);
-
-          body.appendChild(row);
-        });
-
-        details.appendChild(body);
-        card.appendChild(details);
-      });
-    }
-    renderCourseChart();
+    
 
   </script>
 
@@ -3035,6 +2922,153 @@
 
   <script src="i18n.js"></script>
 
+
+<!-- Community module rating system -->
+<script>
+  (function initModuleRatings() {
+    if (typeof firebase === 'undefined' || typeof db === 'undefined') {
+      console.warn('Module ratings: Firebase/Firestore is not available.');
+      return;
+    }
+
+    const ratingsRoot = 'moduleRatings';
+
+    function moduleCodeForCard(card) {
+      const raw = card.querySelector('.module-code')?.textContent || '';
+      const match = raw.match(/S(\\d+)\\s*[•·\\-]\\s*M(\\d+)/i);
+      return match ? 'S' + match[1] + '-M' + match[2] : '';
+    }
+
+    function renderStars(container, selectedRating, average, count) {
+      container.innerHTML = '';
+
+      const label = document.createElement('span');
+      label.className = 'module-rating-label';
+      label.textContent = count ? (average.toFixed(1) + ' / 5') : 'No ratings yet';
+      container.appendChild(label);
+
+      const stars = document.createElement('div');
+      stars.className = 'module-rating-stars';
+      stars.setAttribute('role', 'group');
+      stars.setAttribute('aria-label', 'Rate this module from 1 to 5 stars');
+
+      for (let i = 1; i <= 5; i++) {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'module-rating-star' + (i <= (selectedRating || 0) ? ' is-selected' : '');
+        button.textContent = '★';
+        button.dataset.rating = String(i);
+        button.setAttribute('aria-label', 'Rate ' + i + ' out of 5');
+        stars.appendChild(button);
+      }
+
+      container.appendChild(stars);
+
+      const countText = document.createElement('span');
+      countText.className = 'module-rating-count';
+      countText.textContent = count ? (count + (count === 1 ? ' rating' : ' ratings')) : 'Be the first to rate';
+      container.appendChild(countText);
+    }
+
+    function loadRating(card) {
+      const code = moduleCodeForCard(card);
+      if (!code) return;
+
+      let ratingBox = card.querySelector('.module-rating-box');
+      if (!ratingBox) {
+        ratingBox = document.createElement('div');
+        ratingBox.className = 'module-rating-box';
+        card.appendChild(ratingBox);
+      }
+
+      const user = auth.currentUser;
+      const aggregateRef = db.collection(ratingsRoot).doc(code);
+      const userRef = user
+        ? aggregateRef.collection('votes').doc(user.uid)
+        : null;
+
+      Promise.all([
+        aggregateRef.get(),
+        userRef ? userRef.get() : Promise.resolve(null)
+      ]).then(function(results) {
+        const aggregate = results[0].exists ? results[0].data() : {};
+        const userVote = results[1] && results[1].exists ? results[1].data() : {};
+        const count = Number(aggregate.count || 0);
+        const total = Number(aggregate.total || 0);
+        const average = count ? total / count : 0;
+        renderStars(ratingBox, Number(userVote.rating || 0), average, count);
+
+        ratingBox.querySelectorAll('.module-rating-star').forEach(function(button) {
+          button.addEventListener('click', function() {
+            const currentUser = auth.currentUser;
+            if (!currentUser) {
+              if (typeof openAuthModal === 'function') openAuthModal('signin');
+              return;
+            }
+
+            const newRating = Number(button.dataset.rating);
+            const aggregateRefNow = db.collection(ratingsRoot).doc(code);
+            const voteRefNow = aggregateRefNow.collection('votes').doc(currentUser.uid);
+
+            db.runTransaction(function(transaction) {
+              return transaction.get(voteRefNow).then(function(voteSnap) {
+                const previous = voteSnap.exists ? Number(voteSnap.data().rating || 0) : 0;
+                const aggregateSnapPromise = transaction.get(aggregateRefNow);
+
+                return aggregateSnapPromise.then(function(aggregateSnap) {
+                  const data = aggregateSnap.exists ? aggregateSnap.data() : {};
+                  const oldCount = Number(data.count || 0);
+                  const oldTotal = Number(data.total || 0);
+                  const isNew = !voteSnap.exists;
+
+                  const nextCount = isNew ? oldCount + 1 : oldCount;
+                  const nextTotal = isNew
+                    ? oldTotal + newRating
+                    : oldTotal - previous + newRating;
+
+                  transaction.set(voteRefNow, {
+                    rating: newRating,
+                    updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+                  });
+
+                  transaction.set(aggregateRefNow, {
+                    count: nextCount,
+                    total: nextTotal,
+                    updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+                  }, { merge: true });
+                });
+              });
+            }).then(function() {
+              loadRating(card);
+            }).catch(function(error) {
+              console.error('Module rating failed:', error);
+              alert('Could not save your rating. Please try again.');
+            });
+          });
+        });
+      }).catch(function(error) {
+        console.error('Could not load module rating:', code, error);
+        renderStars(ratingBox, 0, 0, 0);
+      });
+    }
+
+    function initRatings() {
+      document.querySelectorAll('.module-card').forEach(loadRating);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initRatings);
+    } else {
+      initRatings();
+    }
+
+    if (typeof auth !== 'undefined' && auth.onAuthStateChanged) {
+      auth.onAuthStateChanged(function() {
+        initRatings();
+      });
+    }
+  })();
+</script>
 
 <!-- AI Notebook configuration and Ask AI course buttons -->
 <script>
