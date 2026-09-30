@@ -5298,3 +5298,216 @@ main {
   }
 }
 
+
+
+/* =========================================================
+   SITE-WIDE MOTION SYSTEM
+   ========================================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.site-scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  height: 2px;
+  pointer-events: none;
+  background: transparent;
+}
+
+.site-scroll-progress span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-two), var(--accent-three));
+  box-shadow: 0 0 12px rgba(102,217,255,.55);
+  transition: width .08s linear;
+}
+
+.motion-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity .72s cubic-bezier(.2,.7,.2,1),
+    transform .72s cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--motion-delay, 0ms);
+}
+
+.motion-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.motion-card {
+  transition:
+    transform .32s cubic-bezier(.2,.75,.2,1),
+    box-shadow .32s ease,
+    border-color .32s ease;
+  transition-delay: var(--card-delay, 0ms);
+}
+
+.motion-card:hover {
+  transform: translateY(-6px);
+}
+
+.nav-links a {
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -7px;
+  width: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-two));
+  box-shadow: 0 0 10px rgba(102,217,255,.35);
+  transform: translateX(-50%);
+  transition: width .25s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.is-current::after {
+  width: 70%;
+}
+
+/* Animated semester discovery heading */
+.module-ratings-section .section-heading {
+  position: relative;
+}
+
+.module-ratings-section .section-heading h2 {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(
+    110deg,
+    currentColor 20%,
+    var(--accent) 42%,
+    #ffffff 50%,
+    var(--accent-two) 58%,
+    currentColor 80%
+  );
+  background-size: 220% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: semesterHeadingShine 5s ease-in-out infinite;
+}
+
+.module-ratings-section .section-heading h2::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: -13px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(102,217,255,.75),
+    rgba(139,124,255,.75),
+    transparent
+  );
+  transform: scaleX(.35);
+  transform-origin: center;
+  animation: semesterLinePulse 3.2s ease-in-out infinite;
+}
+
+.module-ratings-intro-item {
+  position: relative;
+  overflow: hidden;
+  transform: translateY(0);
+  transition:
+    transform .35s cubic-bezier(.2,.75,.2,1),
+    border-color .35s ease,
+    box-shadow .35s ease;
+}
+
+.module-ratings-intro-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 20%,
+    rgba(102,217,255,.08) 45%,
+    rgba(139,124,255,.10) 52%,
+    transparent 78%
+  );
+  transform: translateX(-120%);
+  transition: transform .7s ease;
+}
+
+.module-ratings-intro-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(102,217,255,.30);
+  box-shadow: 0 20px 55px rgba(0,0,0,.14), 0 0 28px rgba(102,217,255,.05);
+}
+
+.module-ratings-intro-item:hover::before {
+  transform: translateX(120%);
+}
+
+.module-ratings-intro-number {
+  position: relative;
+  transition: transform .35s ease, text-shadow .35s ease;
+}
+
+.module-ratings-intro-item:hover .module-ratings-intro-number {
+  transform: translateX(3px) scale(1.08);
+  text-shadow: 0 0 14px rgba(102,217,255,.45);
+}
+
+@keyframes semesterHeadingShine {
+  0%, 60% { background-position: 100% 0; }
+  82%, 100% { background-position: 0% 0; }
+}
+
+@keyframes semesterLinePulse {
+  0%, 100% { opacity: .35; transform: scaleX(.35); }
+  50% { opacity: 1; transform: scaleX(1); }
+}
+
+#home {
+  transform: translateY(var(--hero-shift, 0px));
+  transition: transform .1s linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .motion-reveal,
+  .motion-card,
+  .module-ratings-intro-item,
+  #home {
+    opacity: 1;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .module-ratings-section .section-heading h2,
+  .module-ratings-section .section-heading h2::after {
+    animation: none !important;
+  }
+
+  .site-scroll-progress {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .module-ratings-section .section-heading h2::after {
+    left: 4%;
+    right: 4%;
+  }
+}
