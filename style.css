@@ -4830,3 +4830,37 @@ h1 {
     transition: none;
   }
 }
+
+
+/* Static Gemini Notebook ad artwork */
+.ai-notebook-art-wrap {
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+.ai-notebook-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 430px;
+  object-fit: cover;
+  background: #030711;
+}
+
+@media (max-width: 900px) {
+  .ai-notebook-art-wrap {
+    min-height: 300px;
+  }
+
+  .ai-notebook-art {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ai-notebook-art-wrap,
+  .ai-notebook-art {
+    min-height: 220px;
+  }
+}
