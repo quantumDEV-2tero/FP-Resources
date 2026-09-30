@@ -6474,3 +6474,516 @@ html {
 @media (prefers-reduced-motion: reduce) {
   .fpl-campus-image, .fpl-campus-link, .fpl-campus-link span { transition: none; }
 }
+
+
+/* =========================================================
+   PHYSICS ARCHIVE — PREMIUM LIBRARY PRESENTATION
+   ========================================================= */
+
+.archive-section {
+  position: relative;
+  overflow: visible;
+}
+
+.archive-heading {
+  position: relative;
+  max-width: 880px;
+  margin-bottom: 42px;
+  padding: 28px 0 0;
+}
+
+.archive-heading::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 86px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-two), transparent);
+  box-shadow: 0 0 18px rgba(102,217,255,.22);
+}
+
+.archive-heading-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 14px;
+}
+
+.archive-heading-topline .section-label {
+  margin: 0;
+}
+
+.archive-heading-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 9px;
+  border: 1px solid rgba(102,217,255,.12);
+  border-radius: 999px;
+  background: rgba(102,217,255,.035);
+  color: var(--muted);
+  font-family: "JetBrains Mono", monospace;
+  font-size: .54rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  white-space: nowrap;
+}
+
+.archive-heading-status span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-three);
+  box-shadow: 0 0 10px rgba(73,242,194,.65);
+}
+
+.archive-heading h2 {
+  max-width: 760px;
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2.35rem, 5vw, 4.2rem);
+  line-height: .98;
+  letter-spacing: -.055em;
+}
+
+.archive-heading p {
+  max-width: 680px;
+  margin: 17px 0 0;
+  color: var(--muted);
+  font-size: .92rem;
+  line-height: 1.75;
+}
+
+.archive-heading-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 23px;
+  color: var(--muted);
+  font-size: .65rem;
+  font-weight: 600;
+}
+
+.archive-heading-meta span {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.archive-heading-meta strong {
+  color: var(--text);
+  font-family: "JetBrains Mono", monospace;
+  font-size: .78rem;
+}
+
+.archive-heading-meta i {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+/* Search + filters feel like one premium library control bar */
+
+.archive-section .module-search {
+  max-width: none;
+  margin: 0 0 14px;
+}
+
+.archive-section .module-search input {
+  min-height: 52px;
+  padding-right: 20px;
+  border-radius: 14px;
+  background:
+    linear-gradient(100deg, rgba(255,255,255,.025), rgba(102,217,255,.018)),
+    var(--card);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.035), 0 12px 35px rgba(0,0,0,.07);
+}
+
+.archive-section .module-search input:focus {
+  border-color: rgba(102,217,255,.45);
+  box-shadow: 0 0 0 4px rgba(102,217,255,.055), inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+.archive-section .favorites-toggle {
+  margin: 0 0 35px;
+  padding: 8px 11px;
+  border: 1px solid rgba(102,217,255,.10);
+  border-radius: 9px;
+  background: rgba(102,217,255,.025);
+  font-size: .66rem;
+  font-weight: 600;
+  transition: border-color .2s ease, background .2s ease;
+}
+
+.archive-section .favorites-toggle:hover {
+  border-color: rgba(102,217,255,.24);
+  background: rgba(102,217,255,.045);
+}
+
+/* Semester library container */
+
+.archive-section .tronc-commun {
+  position: relative;
+  margin-top: 8px;
+}
+
+.archive-section .tronc-commun-summary {
+  position: relative;
+  min-height: 68px;
+  padding: 15px 17px;
+  border-color: rgba(102,217,255,.14);
+  border-radius: 17px;
+  background:
+    radial-gradient(circle at 0% 50%, rgba(102,217,255,.07), transparent 35%),
+    linear-gradient(100deg, rgba(255,255,255,.025), rgba(102,217,255,.018)),
+    var(--card);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.04), 0 14px 40px rgba(0,0,0,.07);
+}
+
+.archive-section .tronc-commun-summary:hover {
+  border-color: rgba(102,217,255,.32);
+  background:
+    radial-gradient(circle at 0% 50%, rgba(102,217,255,.09), transparent 35%),
+    linear-gradient(100deg, rgba(255,255,255,.03), rgba(102,217,255,.025)),
+    var(--card-hover);
+}
+
+.archive-section .tronc-commun-summary > div {
+  gap: 13px;
+}
+
+.archive-section .tronc-commun-summary .semester-number {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(102,217,255,.16);
+  border-radius: 10px;
+  background: rgba(102,217,255,.055);
+  font-family: "JetBrains Mono", monospace;
+  font-size: .65rem;
+  box-shadow: inset 0 0 16px rgba(102,217,255,.025);
+}
+
+.archive-section .tronc-commun-summary h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: .98rem;
+  letter-spacing: -.02em;
+}
+
+.archive-section .tronc-commun-summary .tronc-commun-sub {
+  margin-left: 5px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: .62em;
+  letter-spacing: .03em;
+}
+
+.archive-section .tronc-commun-summary .tronc-commun-chevron {
+  display: grid;
+  place-items: center;
+  width: 31px;
+  height: 31px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: rgba(255,255,255,.018);
+  font-size: .82rem;
+}
+
+.archive-section .tronc-commun-body {
+  padding-top: 24px;
+}
+
+/* Individual semester panels */
+
+.archive-section .semester-block {
+  position: relative;
+  margin-bottom: 34px;
+  padding: 21px 21px 22px;
+  border: 1px solid rgba(135,165,220,.10);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(102,217,255,.035), transparent 28%),
+    rgba(255,255,255,.012);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.025);
+}
+
+.archive-section .semester-block::before {
+  content: "";
+  position: absolute;
+  top: 17px;
+  bottom: 17px;
+  left: 0;
+  width: 2px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(102,217,255,.65), rgba(139,124,255,.28), transparent);
+  opacity: .75;
+}
+
+.archive-section .semester-header {
+  margin: 0 0 18px;
+  padding: 0 2px 15px 4px;
+  border-bottom-color: rgba(135,165,220,.09);
+}
+
+.archive-section .semester-header > div {
+  gap: 11px;
+}
+
+.archive-section .semester-header .semester-number {
+  display: grid;
+  place-items: center;
+  width: 31px;
+  height: 31px;
+  border: 1px solid rgba(102,217,255,.13);
+  border-radius: 9px;
+  background: rgba(102,217,255,.04);
+  font-size: .62rem;
+  letter-spacing: .04em;
+}
+
+.archive-section .semester-header h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.02rem;
+  letter-spacing: -.025em;
+}
+
+.archive-section .module-count {
+  padding: 6px 8px;
+  border: 1px solid rgba(102,217,255,.10);
+  border-radius: 999px;
+  background: rgba(102,217,255,.025);
+  font-family: "JetBrains Mono", monospace;
+  font-size: .55rem;
+  font-weight: 700;
+  letter-spacing: .09em;
+}
+
+/* Module cards */
+
+.archive-section .module-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.archive-section .module-card {
+  position: relative;
+  min-height: 174px;
+  padding: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(135,165,220,.105);
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(102,217,255,.055), transparent 34%),
+    linear-gradient(145deg, rgba(255,255,255,.018), rgba(255,255,255,.005)),
+    var(--card);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.035), 0 10px 28px rgba(0,0,0,.06);
+  transition: transform .3s cubic-bezier(.2,.75,.2,1), border-color .3s ease, box-shadow .3s ease, background .3s ease;
+}
+
+.archive-section .module-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 35%, rgba(102,217,255,.055) 50%, transparent 65%);
+  transform: translateX(-120%);
+  transition: transform .65s ease;
+  pointer-events: none;
+}
+
+.archive-section .module-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 18px;
+  right: 18px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(102,217,255,.30), transparent);
+  opacity: .55;
+}
+
+.archive-section .module-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(102,217,255,.30);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(102,217,255,.08), transparent 34%),
+    var(--card-hover);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 18px 42px rgba(0,0,0,.13);
+}
+
+.archive-section .module-card:hover::before {
+  transform: translateX(120%);
+}
+
+.archive-section .module-code {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-bottom: 11px;
+  padding: 5px 7px;
+  border: 1px solid rgba(102,217,255,.12);
+  border-radius: 7px;
+  background: rgba(102,217,255,.035);
+  color: var(--accent);
+  font-family: "JetBrains Mono", monospace;
+  font-size: .57rem;
+  letter-spacing: .04em;
+}
+
+.archive-section .module-card h3,
+.archive-section .module-card h4 {
+  margin: 0 0 7px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: .98rem;
+  line-height: 1.22;
+  letter-spacing: -.025em;
+}
+
+.archive-section .module-card p {
+  max-width: 94%;
+  margin: 0;
+  color: var(--muted);
+  font-size: .71rem;
+  line-height: 1.62;
+}
+
+.archive-section .module-card .module-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 14px;
+  color: var(--accent);
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .01em;
+  opacity: .88;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+.archive-section .module-card:hover .module-action {
+  transform: translateX(3px);
+  opacity: 1;
+}
+
+/* Keep interactive overlays above the card sheen */
+
+.archive-section .favorite-star,
+.archive-section .ai-notebook-btn {
+  z-index: 4;
+}
+
+.archive-section .favorite-star {
+  top: 10px;
+  right: 10px;
+}
+
+.archive-section .semester-block:nth-child(2) .semester-number {
+  color: #b9a7ff;
+  border-color: rgba(139,124,255,.18);
+  background: rgba(139,124,255,.055);
+}
+
+.archive-section .semester-block:nth-child(3) .semester-number {
+  color: #79e9cf;
+  border-color: rgba(73,242,194,.17);
+  background: rgba(73,242,194,.045);
+}
+
+.archive-section .semester-block:nth-child(4) .semester-number {
+  color: #ffd37a;
+  border-color: rgba(255,211,122,.17);
+  background: rgba(255,211,122,.045);
+}
+
+[data-theme="light"] .archive-section .semester-block {
+  background: linear-gradient(145deg, rgba(255,255,255,.86), rgba(247,250,255,.72));
+  box-shadow: 0 10px 34px rgba(30,50,90,.055);
+}
+
+[data-theme="light"] .archive-section .module-card {
+  background:
+    radial-gradient(circle at 100% 0%, rgba(102,217,255,.055), transparent 34%),
+    var(--card);
+  box-shadow: 0 9px 25px rgba(30,50,90,.055);
+}
+
+@media (max-width: 850px) {
+  .archive-heading {
+    padding-top: 22px;
+  }
+
+  .archive-heading-topline {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .archive-heading-status {
+    font-size: .5rem;
+  }
+
+  .archive-section .module-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .archive-section .semester-block {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .archive-heading h2 {
+    font-size: 2.35rem;
+  }
+
+  .archive-heading p {
+    font-size: .82rem;
+  }
+
+  .archive-heading-meta {
+    gap: 9px;
+  }
+
+  .archive-section .tronc-commun-summary {
+    padding: 13px 14px;
+  }
+
+  .archive-section .tronc-commun-summary h3 {
+    font-size: .88rem;
+  }
+
+  .archive-section .module-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .archive-section .module-card {
+    min-height: 155px;
+  }
+
+  .archive-section .semester-block {
+    padding: 15px;
+    border-radius: 17px;
+  }
+
+  .archive-section .semester-header {
+    align-items: center;
+  }
+
+  .archive-section .module-count {
+    font-size: .5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .archive-section .module-card::before {
+    display: none;
+  }
+
+  .archive-section .module-card {
+    transition: none;
+  }
+}
