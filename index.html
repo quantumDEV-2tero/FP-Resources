@@ -1331,8 +1331,18 @@
       const troncCommun = document.getElementById('tronc-commun');
       if (!input) return;
 
+      function normalizeSearchText(value) {
+        return String(value || '')
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .toLowerCase()
+          .replace(/[•·–—\-_/]+/g, ' ')
+          .replace(/\s+/g, ' ')
+          .trim();
+      }
+
       window.applyModuleFilters = function () {
-        const query = input.value.trim().toLowerCase();
+        const query = normalizeSearchText(input.value);
         const favoritesOnly = document.getElementById('favorites-only-checkbox').checked;
         let totalVisible = 0;
 
@@ -1341,7 +1351,7 @@
           let visibleInBlock = 0;
 
           cards.forEach(function (card) {
-            const text = card.textContent.toLowerCase();
+            const text = normalizeSearchText(card.textContent);
             const matchesQuery = query === '' || text.includes(query);
             const matchesFavorite = !favoritesOnly || card.classList.contains('is-favorited');
             const visible = matchesQuery && matchesFavorite;
