@@ -2935,7 +2935,7 @@
 
     function moduleCodeForCard(card) {
       const raw = card.querySelector('.module-code')?.textContent || '';
-      const match = raw.match(/S(\\d+)\\s*[•·\\-]\\s*M(\\d+)/i);
+      const match = raw.match(/S(\d+)\s*[•·\-]\s*M(\d+)/i);
       return match ? 'S' + match[1] + '-M' + match[2] : '';
     }
 
@@ -3104,7 +3104,7 @@
 
   (function initAINotebookButtons() {
     function normaliseModuleCode(value) {
-      const match = String(value || '').match(/S(\\d+)\\s*[•·\\-]\\s*M(\\d+)/i);
+      const match = String(value || '').match(/S(\d+)\s*[•·\-]\s*M(\d+)/i);
       return match ? 'S' + match[1] + '-M' + match[2] : '';
     }
 
