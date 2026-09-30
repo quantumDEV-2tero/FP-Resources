@@ -4344,7 +4344,7 @@ body.site-sidebar-open {
   gap: 34px;
   align-items: center;
   border: 1px solid rgba(102, 217, 255, .28);
-  border-radius: 22px;
+  border-radius: 19px;
   background: linear-gradient(135deg, rgba(102,217,255,.08), rgba(255,255,255,.025));
   overflow: hidden;
 }
@@ -5521,12 +5521,12 @@ html {
   position: relative;
   isolation: isolate;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(420px, .92fr);
+  grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr);
   align-items: center;
-  gap: clamp(28px, 5vw, 72px);
+  gap: clamp(24px, 5vw, 58px);
   max-width: 1180px;
   margin: 70px auto 34px;
-  padding: clamp(28px, 5vw, 54px);
+  padding: clamp(30px, 4vw, 48px) clamp(30px, 5vw, 58px);
   overflow: hidden;
   border: 1px solid rgba(102, 217, 255, .16);
   border-radius: 30px;
@@ -5572,45 +5572,77 @@ html {
 
 .community-ad-copy .section-label {
   display: inline-flex;
-  margin-bottom: 14px;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding: 7px 11px;
+  border: 1px solid rgba(102, 217, 255, .16);
+  border-radius: 999px;
+  background: rgba(102, 217, 255, .045);
+  letter-spacing: .14em;
+  font-size: .62rem;
+  box-shadow: inset 0 0 18px rgba(102, 217, 255, .025);
+}
+
+.community-ad-copy .section-label::before {
+  content: "✦";
+  color: var(--accent);
+  font-size: .7rem;
 }
 
 .community-ad-copy h2 {
+  position: relative;
   margin: 0;
-  max-width: 620px;
+  max-width: 650px;
   font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(2rem, 4vw, 3.45rem);
-  line-height: 1.02;
-  letter-spacing: -.045em;
+  font-size: clamp(2.15rem, 4vw, 3.6rem);
+  line-height: 1;
+  letter-spacing: -.052em;
+  background: linear-gradient(105deg, #ffffff 15%, #bfefff 52%, #a99cff 92%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.community-ad-copy h2::after {
+  content: "";
+  display: block;
+  width: 74px;
+  height: 2px;
+  margin-top: 20px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-two));
+  box-shadow: 0 0 14px rgba(102, 217, 255, .28);
 }
 
 .community-ad-copy p {
-  max-width: 560px;
+  max-width: 530px;
   margin: 18px 0 0;
-  color: var(--muted);
-  font-size: .98rem;
+  color: #aebed5;
+  font-size: .92rem;
   line-height: 1.75;
+  letter-spacing: .005em;
 }
 
 .community-ad-features {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 9px;
-  max-width: 510px;
-  margin: 25px 0 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 570px;
+  margin: 24px 0;
 }
 
 .community-ad-features span {
   display: flex;
   align-items: center;
   gap: 9px;
-  min-height: 42px;
-  padding: 9px 12px;
-  border: 1px solid rgba(135, 165, 220, .12);
-  border-radius: 12px;
-  background: rgba(255, 255, 255, .025);
-  color: #d8e5f8;
-  font-size: .78rem;
+  min-height: 34px;
+  padding: 7px 10px;
+  border: 1px solid rgba(135, 165, 220, .11);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .018);
+  color: #c8d8ec;
+  font-size: .7rem;
   font-weight: 700;
   transition: transform .25s ease, border-color .25s ease, background .25s ease;
 }
@@ -5658,12 +5690,14 @@ html {
 
 .community-ad-art-wrap {
   min-width: 0;
+  width: min(100%, 410px);
+  justify-self: end;
   perspective: 1200px;
 }
 
-.community-ad-art-frame {
+ .community-ad-art-frame {
   position: relative;
-  padding: 9px;
+  padding: 7px;
   overflow: hidden;
   border: 1px solid rgba(102, 217, 255, .14);
   border-radius: 22px;
@@ -5685,11 +5719,12 @@ html {
   pointer-events: none;
 }
 
-.community-ad-art {
+ .community-ad-art {
   position: relative;
   z-index: 1;
   display: block;
   width: 100%;
+  max-width: 410px;
   height: auto;
   border-radius: 15px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, .22);
@@ -5733,7 +5768,8 @@ html {
   }
 
   .community-ad-art-wrap {
-    max-width: 760px;
+    width: min(100%, 520px);
+    justify-self: start;
   }
 }
 
@@ -5749,13 +5785,16 @@ html {
     font-size: 2rem;
   }
 
+  .community-ad-copy h2::after {
+    margin-top: 16px;
+  }
+
   .community-ad-copy p {
     font-size: .9rem;
     line-height: 1.65;
   }
 
   .community-ad-features {
-    grid-template-columns: 1fr;
     margin: 20px 0;
   }
 
