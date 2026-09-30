@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">FP Library Gemini Notebook advertisement</title>
+  <desc id="desc">A premium dark study dashboard visual promoting Ask AI course notebooks.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#081326"/>
+      <stop offset=".55" stop-color="#11172f"/>
+      <stop offset="1" stop-color="#070b17"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#66d9ff"/>
+      <stop offset=".5" stop-color="#8f82ff"/>
+      <stop offset="1" stop-color="#5cf0c5"/>
+    </linearGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="48"/></filter>
+    <filter id="shadow"><feDropShadow dx="0" dy="22" stdDeviation="24" flood-opacity=".35"/></filter>
+  </defs>
+  <rect width="1200" height="760" fill="url(#bg)"/>
+  <circle cx="930" cy="130" r="180" fill="#66d9ff" opacity=".13" filter="url(#blur)"/>
+  <circle cx="260" cy="650" r="190" fill="#8f82ff" opacity=".12" filter="url(#blur)"/>
+  <g opacity=".09">
+    <path d="M0 80H1200M0 160H1200M0 240H1200M0 320H1200M0 400H1200M0 480H1200M0 560H1200M0 640H1200M80 0V760M160 0V760M240 0V760M320 0V760M400 0V760M480 0V760M560 0V760M640 0V760M720 0V760M800 0V760M880 0V760M960 0V760M1040 0V760M1120 0V760" stroke="#fff"/>
+  </g>
+
+  <g transform="translate(78 68)">
+    <rect width="1044" height="624" rx="30" fill="#050912" stroke="#ffffff" stroke-opacity=".13" filter="url(#shadow)"/>
+    <rect x="1" y="1" width="1042" height="72" rx="29" fill="#ffffff" fill-opacity=".035"/>
+    <circle cx="35" cy="36" r="7" fill="#ff6b7a"/><circle cx="58" cy="36" r="7" fill="#ffd166"/><circle cx="81" cy="36" r="7" fill="#5cf0c5"/>
+    <text x="118" y="42" fill="#aeb9d3" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="600">FP Library / AI Notebook</text>
+
+    <g transform="translate(44 112)">
+      <text x="0" y="35" fill="#66d9ff" font-family="Arial,sans-serif" font-size="16" font-weight="700" letter-spacing="3">NEW • AI STUDY ASSISTANT</text>
+      <text x="0" y="105" fill="#ffffff" font-family="Inter,Arial,sans-serif" font-size="55" font-weight="700">Ask AI about</text>
+      <text x="0" y="166" fill="url(#glow)" font-family="Inter,Arial,sans-serif" font-size="55" font-weight="700">your course.</text>
+      <text x="0" y="211" fill="#8e9ab5" font-family="Inter,Arial,sans-serif" font-size="18">Questions, explanations and summaries</text>
+      <text x="0" y="239" fill="#8e9ab5" font-family="Inter,Arial,sans-serif" font-size="18">grounded in your course materials.</text>
+
+      <g transform="translate(0 282)">
+        <rect width="226" height="58" rx="14" fill="url(#glow)"/>
+        <text x="113" y="36" text-anchor="middle" fill="#04101b" font-family="Inter,Arial,sans-serif" font-size="16" font-weight="800">OPEN NOTEBOOK</text>
+      </g>
+      <text x="0" y="376" fill="#65718b" font-family="JetBrains Mono,monospace" font-size="13">FP LIBRARY • GEMINI NOTEBOOK</text>
+    </g>
+
+    <g transform="translate(585 108)">
+      <rect width="410" height="430" rx="22" fill="#0a1020" stroke="#66d9ff" stroke-opacity=".22"/>
+      <rect x="24" y="24" width="362" height="56" rx="12" fill="#ffffff" fill-opacity=".035"/>
+      <circle cx="51" cy="52" r="13" fill="#66d9ff" fill-opacity=".16"/>
+      <path d="M45 52h12M51 46v12" stroke="#66d9ff" stroke-width="2"/>
+      <text x="78" y="58" fill="#dce6fb" font-family="Inter,Arial,sans-serif" font-size="16" font-weight="700">Thermodynamics</text>
+
+      <rect x="24" y="106" width="290" height="78" rx="15" fill="#ffffff" fill-opacity=".045"/>
+      <text x="42" y="137" fill="#71809e" font-family="Inter,Arial,sans-serif" font-size="13">YOU</text>
+      <text x="42" y="162" fill="#dce6fb" font-family="Inter,Arial,sans-serif" font-size="14">Explain the Carnot cycle.</text>
+
+      <rect x="96" y="204" width="290" height="116" rx="15" fill="#66d9ff" fill-opacity=".08" stroke="#66d9ff" stroke-opacity=".14"/>
+      <text x="114" y="235" fill="#66d9ff" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700">AI NOTEBOOK</text>
+      <text x="114" y="263" fill="#dce6fb" font-family="Inter,Arial,sans-serif" font-size="14">The Carnot cycle uses two</text>
+      <text x="114" y="286" fill="#dce6fb" font-family="Inter,Arial,sans-serif" font-size="14">isothermal and two adiabatic</text>
+      <text x="114" y="309" fill="#dce6fb" font-family="Inter,Arial,sans-serif" font-size="14">processes between reservoirs.</text>
+
+      <rect x="24" y="348" width="362" height="58" rx="13" fill="#ffffff" fill-opacity=".03"/>
+      <text x="44" y="383" fill="#56637d" font-family="JetBrains Mono,monospace" font-size="12">COURSE SOURCES • 12 DOCUMENTS</text>
+    </g>
+  </g>
+</svg>
