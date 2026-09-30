@@ -5511,3 +5511,179 @@ html {
     right: 4%;
   }
 }
+
+
+/* =========================================================
+   AI + STUDENT COMMUNITY AD
+   ========================================================= */
+
+.community-ad {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(360px, .82fr) minmax(520px, 1.18fr);
+  gap: 30px;
+  align-items: center;
+  max-width: 1320px;
+  margin: 34px auto 0;
+  padding: 26px;
+  overflow: hidden;
+  border: 1px solid rgba(102,217,255,.20);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 15% 30%, rgba(102,217,255,.10), transparent 34%),
+    radial-gradient(circle at 80% 60%, rgba(139,124,255,.12), transparent 38%),
+    linear-gradient(135deg, rgba(8,22,46,.96), rgba(10,17,49,.94));
+  box-shadow: 0 24px 70px rgba(0,0,0,.18);
+}
+
+.community-ad::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,.035) 50%, transparent 65%);
+  transform: translateX(-100%);
+  animation: communityAdSweep 7s ease-in-out infinite;
+}
+
+.community-ad-copy {
+  position: relative;
+  z-index: 1;
+  padding: 20px 10px 20px 16px;
+}
+
+.community-ad-copy h2 {
+  max-width: 570px;
+  margin: 14px 0 14px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.04;
+}
+
+.community-ad-copy p {
+  max-width: 570px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.community-ad-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 18px;
+  max-width: 520px;
+  margin: 22px 0;
+  color: #c8daf3;
+  font-size: .78rem;
+  font-weight: 700;
+}
+
+.community-ad-features span {
+  padding: 9px 12px;
+  border: 1px solid rgba(124,151,210,.13);
+  border-radius: 10px;
+  background: rgba(255,255,255,.025);
+}
+
+.community-ad-signin {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding-inline: 20px;
+  border: 0;
+  cursor: pointer;
+}
+
+.community-ad-signin span {
+  font-size: 1.1rem;
+  transition: transform .2s ease;
+}
+
+.community-ad-signin:hover span {
+  transform: translateX(4px);
+}
+
+.community-ad-note {
+  display: block;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: .68rem;
+}
+
+.community-ad-art-wrap {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  perspective: 1200px;
+}
+
+.community-ad-art {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  border: 1px solid rgba(102,217,255,.18);
+  box-shadow: 0 24px 65px rgba(0,0,0,.24), 0 0 35px rgba(102,217,255,.06);
+  transform: rotateY(-2deg) rotateX(1deg);
+  transition: transform .5s cubic-bezier(.2,.75,.2,1), box-shadow .5s ease;
+}
+
+.community-ad:hover .community-ad-art {
+  transform: rotateY(0) rotateX(0) translateY(-3px);
+  box-shadow: 0 30px 80px rgba(0,0,0,.28), 0 0 45px rgba(102,217,255,.10);
+}
+
+[data-theme="light"] .community-ad {
+  background:
+    radial-gradient(circle at 15% 30%, rgba(102,217,255,.10), transparent 34%),
+    radial-gradient(circle at 80% 60%, rgba(139,124,255,.09), transparent 38%),
+    linear-gradient(135deg, rgba(239,247,255,.98), rgba(245,243,255,.98));
+  border-color: rgba(53,84,160,.16);
+}
+
+@keyframes communityAdSweep {
+  0%, 62% { transform: translateX(-100%); }
+  78%, 100% { transform: translateX(100%); }
+}
+
+@media (max-width: 1050px) {
+  .community-ad {
+    grid-template-columns: 1fr;
+  }
+
+  .community-ad-copy {
+    padding: 18px 14px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .community-ad {
+    margin-top: 24px;
+    padding: 14px;
+    border-radius: 20px;
+  }
+
+  .community-ad-copy {
+    padding: 12px 8px 0;
+  }
+
+  .community-ad-features {
+    grid-template-columns: 1fr;
+  }
+
+  .community-ad-art {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .community-ad::before {
+    animation: none;
+  }
+
+  .community-ad-art {
+    transform: none;
+    transition: none;
+  }
+}
