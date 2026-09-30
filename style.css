@@ -7395,3 +7395,90 @@ html {
   opacity: .68;
 }
 
+
+
+/* Final archive card layout fix
+   The card contains: code/title/content + AI action + rating footer.
+   Keep enough vertical space so these never overlap on mobile or desktop. */
+.archive-section .module-card {
+  min-height: 235px;
+  padding: 22px 22px 142px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.archive-section .module-card > .module-code {
+  display: inline-flex;
+  position: relative;
+  z-index: 2;
+}
+
+.archive-section .module-card > h3,
+.archive-section .module-card > h4 {
+  position: relative;
+  z-index: 2;
+  margin-top: 10px;
+}
+
+.archive-section .module-card > p {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0;
+}
+
+.archive-section .ask-ai-button {
+  left: 22px;
+  bottom: 78px;
+  z-index: 5;
+  white-space: nowrap;
+}
+
+.archive-section .module-rating-box {
+  left: 22px;
+  right: 22px;
+  bottom: 16px;
+  z-index: 5;
+  min-height: 52px;
+  padding-top: 9px;
+}
+
+.archive-section .module-rating-stars {
+  min-width: 0;
+  flex-wrap: nowrap;
+}
+
+.archive-section .favorite-star {
+  z-index: 6;
+}
+
+.archive-section .module-card-unavailable {
+  padding-bottom: 22px;
+}
+
+@media (max-width: 600px) {
+  .archive-section .module-card {
+    min-height: 250px;
+    padding: 20px 20px 148px;
+  }
+
+  .archive-section .ask-ai-button {
+    left: 20px;
+    bottom: 84px;
+  }
+
+  .archive-section .module-rating-box {
+    left: 20px;
+    right: 20px;
+    bottom: 15px;
+  }
+
+  .archive-section .module-card > h3,
+  .archive-section .module-card > h4 {
+    margin-top: 10px;
+    font-size: .98rem;
+  }
+
+  .archive-section .module-card > p {
+    max-width: 100%;
+  }
+}
