@@ -3075,34 +3075,11 @@
 
 <!-- AI Notebook configuration and Ask AI course buttons -->
 <script>
-  /* Replace these placeholder values with your shared Gemini Notebook URLs. */
+  /* Add your shared Gemini Notebook URLs only for the modules currently available. */
   const AI_NOTEBOOK_LINKS = {
-    "S1-M01": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S1_M01",
-    "S1-M02": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S1_M02",
-    "S1-M03": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S1_M03",
-    "S1-M04": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S1_M04",
-    "S1-M05": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S1_M05",
-    "S1-M06": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S1_M06",
-    "S2-M01": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S2_M01",
-    "S2-M02": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S2_M02",
-    "S2-M03": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S2_M03",
-    "S2-M04": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S2_M04",
-    "S2-M05": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S2_M05",
-    "S2-M06": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S2_M06",
-    "S2-M07": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S2_M07",
-    "S3-M01": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S3_M01",
-    "S3-M02": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S3_M02",
-    "S3-M03": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S3_M03",
-    "S3-M04": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S3_M04",
-    "S3-M05": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S3_M05",
-    "FRENCH": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_FRENCH",
-    "S3-M07": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S3_M07",
-    "S4-M01": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S4_M01",
-    "S4-M02": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S4_M02",
-    "S4-M03": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S4_M03",
-    "S4-M05": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S4_M05",
-    "S4-M06": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S4_M06",
-    "S4-M07": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S4_M07"
+    "S2-M02": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S2_M02", // Électricité
+    "S3-M04": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S3_M04", // Mécanique du Solide
+    "S3-M07": "REPLACE_WITH_GEMINI_NOTEBOOK_LINK_S3_M07"  // Thermodynamique 2
   };
 
   (function initAINotebookButtons() {
@@ -3127,7 +3104,7 @@
         window.open(url, '_blank', 'noopener,noreferrer');
         return;
       }
-      alert('This AI Notebook is not configured yet. Replace the placeholder for "' + key + '" in the AI_NOTEBOOK_LINKS section near the bottom of index.html.');
+      alert('The AI Notebook for this module will be available soon. Stay tuned!');
     }
 
     document.querySelectorAll('.module-card').forEach(function(card) {
